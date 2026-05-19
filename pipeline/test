@@ -1,0 +1,80 @@
+> -rw-rw----+ 1 tkalman ps30572 169046150 May 13 22:04 DAL1_1.sorted.bam.tmp.0023.bam
+> -rw-rw----+ 1 tkalman ps30572 169743914 May 13 22:04 DAL1_1.sorted.bam.tmp.0024.bam
+> -rw-rw----+ 1 tkalman ps30572 174256975 May 13 22:04 DAL1_1.sorted.bam.tmp.0025.bam
+> -rw-rw----+ 1 tkalman ps30572 179026682 May 13 22:04 DAL1_1.sorted.bam.tmp.0026.bam
+> -rw-rw----+ 1 tkalman ps30572 169600609 May 13 22:04 DAL1_1.sorted.bam.tmp.0027.bam
+> -rw-rw----+ 1 tkalman ps30572 165324541 May 13 22:04 DAL1_1.sorted.bam.tmp.0028.bam
+> -rw-rw----+ 1 tkalman ps30572 163915836 May 13 22:04 DAL1_1.sorted.bam.tmp.0029.bam
+> -rw-rw----+ 1 tkalman ps30572 164790622 May 13 22:04 DAL1_1.sorted.bam.tmp.0030.bam
+> -rw-rw----+ 1 tkalman ps30572 165947785 May 13 22:04 DAL1_1.sorted.bam.tmp.0031.bam
+> -rw-rw----+ 1 tkalman ps30572 167687240 May 13 22:04 DAL1_1.sorted.bam.tmp.0032.bam
+> -rw-rw----+ 1 tkalman ps30572 168383543 May 13 22:04 DAL1_1.sorted.bam.tmp.0033.bam
+> -rw-rw----+ 1 tkalman ps30572 175911275 May 13 22:04 DAL1_1.sorted.bam.tmp.0034.bam
+> -rw-rw----+ 1 tkalman ps30572 175496020 May 13 22:04 DAL1_1.sorted.bam.tmp.0035.bam
+> lrwxrwxrwx  1 tkalman ps30572       132 May 13 20:28 DAL1_1.trimmomatic_1.fq.gz -> /pfs/proj/nobackup/fs/projnb10/hpc2nstor2024-058/DAPseq_test/nf_workdir/ce/c8687522b96454b8f81b80c57f5742/DAL1_1.trimmomatic_1.fq.gz
+> lrwxrwxrwx  1 tkalman ps30572       132 May 13 20:28 DAL1_1.trimmomatic_2.fq.gz -> /pfs/proj/nobackup/fs/projnb10/hpc2nstor2024-058/DAPseq_test/nf_workdir/ce/c8687522b96454b8f81b80c57f5742/DAL1_1.trimmomatic_2.fq.gz
+
+May-13 22:30:55.202 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 44680280; id: 9; name: BOWTIE2_ALIGN_SORT (DAL1_1); status: COMPLETED; exit: -; error: -; workDir: /home/t/tkalman/storage2/DAPseq_test/nf_workdir/c8/a721c9ee32e1144d6f78279b301d4e started: 1778696904982; exited: -; ]
+May-13 22:30:55.281 [TaskFinalizer-8] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=BOWTIE2_ALIGN_SORT (DAL1_1); work-dir=/home/t/tkalman/storage2/DAPseq_test/nf_workdir/c8/a721c9ee32e1144d6f78279b301d4e
+  error [nextflow.exception.ProcessFailedException]: Process `BOWTIE2_ALIGN_SORT (DAL1_1)` terminated for an unknown reason -- Likely it has been terminated by the external system
+May-13 22:30:55.466 [TaskFinalizer-8] ERROR nextflow.processor.TaskProcessor - Error executing process > 'BOWTIE2_ALIGN_SORT (DAL1_1)'
+
+Caused by:
+  Process `BOWTIE2_ALIGN_SORT (DAL1_1)` terminated for an unknown reason -- Likely it has been terminated by the external system
+
+
+Command executed:
+
+  set -euo pipefail
+  
+  {
+    singularity exec /home/t/tkalman/storage2/singularity/bowtie2_2.4.5.sif       bowtie2       --very-sensitive --end-to-end --dovetail --minins 50 --maxins 1000       -x /home/t/tkalman/storage2/fasta_w-MT-and-CP/original/bowtie2/Picab02_chromosomes_and_unplaced       -1 DAL1_1.trimmomatic_1.fq.gz       -2 DAL1_1.trimmomatic_2.fq.gz       --threads 18 |     singularity exec /home/t/tkalman/storage2/singularity/samtools_1.16.sif       samtools sort         -@ 18         -O bam         -o DAL1_1.sorted.bam         -
+  
+    singularity exec /home/t/tkalman/storage2/singularity/samtools_1.16.sif       samtools index         -c         -@ 18         DAL1_1.sorted.bam
+  } 2> DAL1_1.bowtie2_align_sort.err
+
+Command exit status:
+  -
+
+Command output:
+  (empty)
+
+Work dir:
+  /home/t/tkalman/storage2/DAPseq_test/nf_workdir/c8/a721c9ee32e1144d6f78279b301d4e
+
+Tip: view the complete command output by changing to the process work dir and entering the command `cat .command.out`
+May-13 22:30:55.472 [TaskFinalizer-8] DEBUG nextflow.Session - Session aborted -- Cause: Process `BOWTIE2_ALIGN_SORT (DAL1_1)` terminated for an unknown reason -- Likely it has been terminated by the external system
+May-13 22:30:55.499 [TaskFinalizer-8] DEBUG nextflow.Session - The following nodes are still active:
+[process] SAMTOOLS_FILTER_Q20
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] SAMTOOLS_MARKDUP_REMOVE
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] MACS3_CALLPEAK
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] TOP_SIGNAL_PEAKS
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] MEME_CHIP
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+May-13 22:30:55.505 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: slurm) - terminating tasks monitor poll loop
+May-13 22:30:55.506 [main] DEBUG nextflow.Session - Session await > all processes finished
+May-13 22:30:55.506 [main] DEBUG nextflow.Session - Session await > all barriers passed
+May-13 22:30:55.514 [main] WARN  n.processor.TaskPollingMonitor - Killing running tasks (2)
+May-13 22:30:55.564 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=7; failedCount=1; ignoredCount=0; cachedCount=4; pendingCount=0; submittedCount=1; runningCount=-1; retriesCount=0; abortedCount=2; succeedDuration=1d 21h 40m 7s; failedDuration=1d 12h 45m 4s; cachedDuration=2h 30m 45s;loadCpus=-18; loadMemory=0; peakRunning=4; peakCpus=54; peakMemory=512 GB; ]
+May-13 22:30:55.982 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+May-13 22:30:56.045 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

@@ -1,0 +1,3 @@
+# Before nextflow can be run
+module load Java/17.0.6
+export PATH="$HOME/.local/bin:$PATH"

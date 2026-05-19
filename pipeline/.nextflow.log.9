@@ -1,0 +1,174 @@
+May-18 08:36:39.573 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf -profile slurm -resume
+May-18 08:36:39.677 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 25.04.6
+May-18 08:36:39.697 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/t/tkalman/.nextflow/plugins; core-plugins: nf-amazon@2.15.0,nf-azure@1.16.0,nf-cloudcache@0.4.3,nf-codecommit@0.2.3,nf-console@1.2.1,nf-google@1.21.1,nf-k8s@1.0.0,nf-tower@1.11.4,nf-wave@1.12.1
+May-18 08:36:39.719 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+May-18 08:36:39.720 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+May-18 08:36:39.723 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.12.0 in 'deployment' mode
+May-18 08:36:39.735 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+May-18 08:36:39.754 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /pfs/stor10/users/home/t/tkalman/Git/DAP-seq_processing/pipeline/nextflow.config
+May-18 08:36:39.757 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /pfs/stor10/users/home/t/tkalman/Git/DAP-seq_processing/pipeline/nextflow.config
+May-18 08:36:39.803 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/t/tkalman/.nextflow/secrets/store.json
+May-18 08:36:39.806 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@64e1dd11] - activable => nextflow.secret.LocalSecretsProvider@64e1dd11
+May-18 08:36:39.812 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `slurm`
+May-18 08:36:40.300 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [slurm]
+May-18 08:36:40.341 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declaration
+May-18 08:36:40.359 [main] DEBUG nextflow.cli.CmdRun - Launching `main.nf` [desperate_wozniak] DSL2 - revision: ba6a98a57b
+May-18 08:36:40.360 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+May-18 08:36:40.360 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+May-18 08:36:40.415 [main] DEBUG nextflow.Session - Session UUID: ac2eea48-50e8-40ec-b8e6-287e6d2ec878
+May-18 08:36:40.415 [main] DEBUG nextflow.Session - Run name: desperate_wozniak
+May-18 08:36:40.415 [main] DEBUG nextflow.Session - Executor pool size: 32
+May-18 08:36:40.422 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+May-18 08:36:40.426 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=96; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+May-18 08:36:40.448 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 25.04.6 build 5954
+  Created: 01-07-2025 11:27 UTC (13:27 CEST)
+  System: Linux 5.15.0-177-generic
+  Runtime: Groovy 4.0.26 on OpenJDK 64-Bit Server VM 17.0.6+10
+  Encoding: UTF-8 (UTF-8)
+  Process: 496907@b-cn1613.hpc2n.umu.se [130.239.243.172]
+  CPUs: 32 - Mem: 251.3 GB (166.8 GB) - Swap: 128 MB (110.5 MB)
+May-18 08:36:40.546 [main] DEBUG nextflow.Session - Work-dir: /home/t/tkalman/storage2/DAPseq_test/nf_workdir3 [lustre]
+May-18 08:36:40.548 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /pfs/stor10/users/home/t/tkalman/Git/DAP-seq_processing/pipeline/bin
+May-18 08:36:40.558 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+May-18 08:36:40.576 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+May-18 08:36:40.579 [main] DEBUG nextflow.Session - Observer factory (v2): LinObserverFactory
+May-18 08:36:40.600 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+May-18 08:36:40.608 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 33; maxThreads: 1000
+May-18 08:36:40.697 [main] DEBUG nextflow.Session - Session start
+May-18 08:36:41.449 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+May-18 08:36:41.616 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:FASTQC_RAW|FASTQC_TRIMMED` matches process FASTQC_RAW
+May-18 08:36:41.624 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+May-18 08:36:41.624 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+May-18 08:36:41.632 [main] DEBUG nextflow.executor.Executor - [warm up] executor > slurm
+May-18 08:36:41.637 [main] DEBUG n.processor.TaskPollingMonitor - Creating task monitor for executor 'slurm' > capacity: 100; pollInterval: 30s; dumpInterval: 5m 
+May-18 08:36:41.639 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: slurm)
+May-18 08:36:41.641 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+May-18 08:36:41.661 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'FASTQC_RAW': maxForks=0; fair=false; array=0
+May-18 08:36:41.698 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:MULTIQC_RAW|MULTIQC_TRIMMED` matches process MULTIQC_RAW
+May-18 08:36:41.699 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+May-18 08:36:41.699 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+May-18 08:36:41.700 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'MULTIQC_RAW': maxForks=0; fair=false; array=0
+May-18 08:36:41.715 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:TRIMMOMATIC_PE` matches process TRIMMOMATIC_PE
+May-18 08:36:41.721 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+May-18 08:36:41.721 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+May-18 08:36:41.722 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'TRIMMOMATIC_PE': maxForks=0; fair=false; array=0
+May-18 08:36:41.728 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:FASTQC_RAW|FASTQC_TRIMMED` matches process FASTQC_TRIMMED
+May-18 08:36:41.730 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+May-18 08:36:41.730 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+May-18 08:36:41.731 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'FASTQC_TRIMMED': maxForks=0; fair=false; array=0
+May-18 08:36:41.737 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:MULTIQC_RAW|MULTIQC_TRIMMED` matches process MULTIQC_TRIMMED
+May-18 08:36:41.739 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+May-18 08:36:41.739 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+May-18 08:36:41.740 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'MULTIQC_TRIMMED': maxForks=0; fair=false; array=0
+May-18 08:36:41.746 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:BOWTIE2_ALIGN_SORT` matches process BOWTIE2_ALIGN_SORT
+May-18 08:36:41.747 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+May-18 08:36:41.748 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+May-18 08:36:41.748 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'BOWTIE2_ALIGN_SORT': maxForks=0; fair=false; array=0
+May-18 08:36:41.754 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:SAMTOOLS_FILTER_Q20|SAMTOOLS_MARKDUP_REMOVE` matches process SAMTOOLS_FILTER_Q20
+May-18 08:36:41.755 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+May-18 08:36:41.756 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+May-18 08:36:41.756 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'SAMTOOLS_FILTER_Q20': maxForks=0; fair=false; array=0
+May-18 08:36:41.762 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:SAMTOOLS_FILTER_Q20|SAMTOOLS_MARKDUP_REMOVE` matches process SAMTOOLS_MARKDUP_REMOVE
+May-18 08:36:41.765 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+May-18 08:36:41.765 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+May-18 08:36:41.766 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'SAMTOOLS_MARKDUP_REMOVE': maxForks=0; fair=false; array=0
+May-18 08:36:41.780 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:MACS3_CALLPEAK` matches process MACS3_CALLPEAK
+May-18 08:36:41.781 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+May-18 08:36:41.781 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+May-18 08:36:41.782 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'MACS3_CALLPEAK': maxForks=0; fair=false; array=0
+May-18 08:36:41.788 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:PEAK_PROMOTER_INTERSECT` matches process PEAK_PROMOTER_INTERSECT
+May-18 08:36:41.790 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+May-18 08:36:41.790 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+May-18 08:36:41.791 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'PEAK_PROMOTER_INTERSECT': maxForks=0; fair=false; array=0
+May-18 08:36:41.797 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:TOP_SIGNAL_PEAKS` matches process TOP_SIGNAL_PEAKS
+May-18 08:36:41.798 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+May-18 08:36:41.798 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+May-18 08:36:41.799 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'TOP_SIGNAL_PEAKS': maxForks=0; fair=false; array=0
+May-18 08:36:41.805 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:MEME_CHIP` matches process MEME_CHIP
+May-18 08:36:41.806 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+May-18 08:36:41.806 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+May-18 08:36:41.807 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'MEME_CHIP': maxForks=0; fair=false; array=0
+May-18 08:36:41.809 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: FASTQC_RAW, MACS3_CALLPEAK, BOWTIE2_ALIGN_SORT, MEME_CHIP, TOP_SIGNAL_PEAKS, SAMTOOLS_FILTER_Q20, MULTIQC_TRIMMED, MULTIQC_RAW, PEAK_PROMOTER_INTERSECT, FASTQC_TRIMMED, TRIMMOMATIC_PE, SAMTOOLS_MARKDUP_REMOVE
+May-18 08:36:41.813 [main] DEBUG nextflow.Session - Igniting dataflow network (13)
+May-18 08:36:41.819 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > FASTQC_RAW
+May-18 08:36:41.819 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > MULTIQC_RAW
+May-18 08:36:41.820 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > TRIMMOMATIC_PE
+May-18 08:36:41.820 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > FASTQC_TRIMMED
+May-18 08:36:41.820 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > MULTIQC_TRIMMED
+May-18 08:36:41.820 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > BOWTIE2_ALIGN_SORT
+May-18 08:36:41.821 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > SAMTOOLS_FILTER_Q20
+May-18 08:36:41.821 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > SAMTOOLS_MARKDUP_REMOVE
+May-18 08:36:41.821 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > MACS3_CALLPEAK
+May-18 08:36:41.822 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > PEAK_PROMOTER_INTERSECT
+May-18 08:36:41.822 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > TOP_SIGNAL_PEAKS
+May-18 08:36:41.822 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > MEME_CHIP
+May-18 08:36:41.823 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_65d2f48e0e78f827: /pfs/stor10/users/home/t/tkalman/Git/DAP-seq_processing/pipeline/main.nf
+May-18 08:36:41.823 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+May-18 08:36:41.823 [main] DEBUG nextflow.Session - Session await
+May-18 08:36:42.017 [Actor Thread 30] INFO  nextflow.processor.TaskProcessor - [c6/6f0ad6] Cached process > TRIMMOMATIC_PE (SPL1_2)
+May-18 08:36:42.017 [Actor Thread 32] INFO  nextflow.processor.TaskProcessor - [b1/607187] Cached process > TRIMMOMATIC_PE (Input2)
+May-18 08:36:42.017 [Actor Thread 29] INFO  nextflow.processor.TaskProcessor - [c5/65ca89] Cached process > TRIMMOMATIC_PE (SPL1_1)
+May-18 08:36:42.017 [Actor Thread 27] INFO  nextflow.processor.TaskProcessor - [2e/7f24af] Cached process > TRIMMOMATIC_PE (Input1)
+May-18 08:36:42.023 [Actor Thread 33] INFO  nextflow.processor.TaskProcessor - [30/eccb6a] Cached process > FASTQC_RAW (Input1)
+May-18 08:36:42.025 [Actor Thread 31] INFO  nextflow.processor.TaskProcessor - [bf/3215f2] Cached process > FASTQC_RAW (SPL1_2)
+May-18 08:36:42.025 [Actor Thread 28] INFO  nextflow.processor.TaskProcessor - [a7/f3ea2b] Cached process > FASTQC_RAW (SPL1_1)
+May-18 08:36:42.034 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [c8/22d83d] Cached process > FASTQC_RAW (Input2)
+May-18 08:36:42.069 [Actor Thread 33] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'PublishDir' minSize=10; maxSize=96; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+May-18 08:36:42.076 [Actor Thread 20] INFO  nextflow.processor.TaskProcessor - [5c/1d6703] Cached process > FASTQC_TRIMMED (Input1)
+May-18 08:36:42.076 [Actor Thread 14] INFO  nextflow.processor.TaskProcessor - [e1/6edacd] Cached process > FASTQC_TRIMMED (SPL1_2)
+May-18 08:36:42.078 [Actor Thread 19] INFO  nextflow.processor.TaskProcessor - [2c/78dd45] Cached process > FASTQC_TRIMMED (Input2)
+May-18 08:36:42.078 [Actor Thread 18] INFO  nextflow.processor.TaskProcessor - [ff/3c27cf] Cached process > FASTQC_TRIMMED (SPL1_1)
+May-18 08:36:42.084 [Actor Thread 10] INFO  nextflow.processor.TaskProcessor - [1f/c6fa11] Cached process > BOWTIE2_ALIGN_SORT (SPL1_2)
+May-18 08:36:42.084 [Actor Thread 16] INFO  nextflow.processor.TaskProcessor - [26/63191c] Cached process > BOWTIE2_ALIGN_SORT (Input2)
+May-18 08:36:42.084 [Actor Thread 21] INFO  nextflow.processor.TaskProcessor - [81/ca9238] Cached process > BOWTIE2_ALIGN_SORT (Input1)
+May-18 08:36:42.085 [Actor Thread 22] INFO  nextflow.processor.TaskProcessor - [96/28b724] Cached process > BOWTIE2_ALIGN_SORT (SPL1_1)
+May-18 08:36:42.101 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [a6/740602] Cached process > MULTIQC_RAW (raw_fastqc)
+May-18 08:36:42.107 [Actor Thread 20] INFO  nextflow.processor.TaskProcessor - [52/5f3e22] Cached process > SAMTOOLS_FILTER_Q20 (Input2)
+May-18 08:36:42.107 [Actor Thread 25] INFO  nextflow.processor.TaskProcessor - [e9/9a502e] Cached process > SAMTOOLS_FILTER_Q20 (SPL1_1)
+May-18 08:36:42.108 [Actor Thread 14] INFO  nextflow.processor.TaskProcessor - [a6/b28b3d] Cached process > SAMTOOLS_FILTER_Q20 (Input1)
+May-18 08:36:42.108 [Actor Thread 18] INFO  nextflow.processor.TaskProcessor - [5e/2dd71f] Cached process > SAMTOOLS_FILTER_Q20 (SPL1_2)
+May-18 08:36:42.112 [Actor Thread 30] INFO  nextflow.processor.TaskProcessor - [95/6f6f1e] Cached process > MULTIQC_TRIMMED (trimmed_fastqc)
+May-18 08:36:42.145 [Actor Thread 21] INFO  nextflow.processor.TaskProcessor - [c9/252a5b] Cached process > SAMTOOLS_MARKDUP_REMOVE (Input2)
+May-18 08:36:42.145 [Actor Thread 32] INFO  nextflow.processor.TaskProcessor - [c7/67067a] Cached process > SAMTOOLS_MARKDUP_REMOVE (SPL1_1)
+May-18 08:36:42.145 [Actor Thread 33] INFO  nextflow.processor.TaskProcessor - [cc/62bab5] Cached process > SAMTOOLS_MARKDUP_REMOVE (SPL1_2)
+May-18 08:36:42.146 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [71/9b0069] Cached process > SAMTOOLS_MARKDUP_REMOVE (Input1)
+May-18 08:36:42.174 [Actor Thread 21] INFO  nextflow.processor.TaskProcessor - [d4/bc09c2] Cached process > MACS3_CALLPEAK (SPL1_1)
+May-18 08:36:42.174 [Actor Thread 32] INFO  nextflow.processor.TaskProcessor - [49/941b04] Cached process > MACS3_CALLPEAK (SPL1_2)
+May-18 08:36:42.193 [Actor Thread 30] INFO  nextflow.processor.TaskProcessor - [15/74b98b] Cached process > PEAK_PROMOTER_INTERSECT (SPL1_2)
+May-18 08:36:42.193 [Actor Thread 33] INFO  nextflow.processor.TaskProcessor - [ee/74a6de] Cached process > TOP_SIGNAL_PEAKS (SPL1_2)
+May-18 08:36:42.193 [Actor Thread 29] INFO  nextflow.processor.TaskProcessor - [96/6b1110] Cached process > TOP_SIGNAL_PEAKS (SPL1_1)
+May-18 08:36:42.194 [Actor Thread 27] INFO  nextflow.processor.TaskProcessor - [52/3704c8] Cached process > PEAK_PROMOTER_INTERSECT (SPL1_1)
+May-18 08:36:42.311 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process MEME_CHIP (SPL1_1) > jobId: 44841579; workDir: /home/t/tkalman/storage2/DAPseq_test/nf_workdir3/62/2fae75130cd1772922e82bd88b4ede
+May-18 08:36:42.312 [Task submitter] INFO  nextflow.Session - [62/2fae75] Submitted process > MEME_CHIP (SPL1_1)
+May-18 08:36:42.343 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process MEME_CHIP (SPL1_2) > jobId: 44841580; workDir: /home/t/tkalman/storage2/DAPseq_test/nf_workdir3/1a/b55bc166f9fe4073ae1334b7b0aa02
+May-18 08:36:42.344 [Task submitter] INFO  nextflow.Session - [1a/b55bc1] Submitted process > MEME_CHIP (SPL1_2)
+May-18 08:40:11.652 [Task monitor] DEBUG nextflow.file.FileHelper - FS path type (true): /home/t/tkalman/storage2/DAPseq_test/nf_workdir3
+May-18 08:42:11.656 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[jobId: 44841579; id: 34; name: MEME_CHIP (SPL1_1); status: RUNNING; exit: -; error: -; workDir: /home/t/tkalman/storage2/DAPseq_test/nf_workdir3/62/2fae75130cd1772922e82bd88b4ede started: 1779086231649; exited: -; ]
+~> TaskHandler[jobId: 44841580; id: 33; name: MEME_CHIP (SPL1_2); status: RUNNING; exit: -; error: -; workDir: /home/t/tkalman/storage2/DAPseq_test/nf_workdir3/1a/b55bc166f9fe4073ae1334b7b0aa02 started: 1779086231677; exited: -; ]
+May-18 08:47:11.663 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[jobId: 44841579; id: 34; name: MEME_CHIP (SPL1_1); status: RUNNING; exit: -; error: -; workDir: /home/t/tkalman/storage2/DAPseq_test/nf_workdir3/62/2fae75130cd1772922e82bd88b4ede started: 1779086231649; exited: -; ]
+~> TaskHandler[jobId: 44841580; id: 33; name: MEME_CHIP (SPL1_2); status: RUNNING; exit: -; error: -; workDir: /home/t/tkalman/storage2/DAPseq_test/nf_workdir3/1a/b55bc166f9fe4073ae1334b7b0aa02 started: 1779086231677; exited: -; ]
+May-18 08:52:11.670 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[jobId: 44841579; id: 34; name: MEME_CHIP (SPL1_1); status: RUNNING; exit: -; error: -; workDir: /home/t/tkalman/storage2/DAPseq_test/nf_workdir3/62/2fae75130cd1772922e82bd88b4ede started: 1779086231649; exited: -; ]
+~> TaskHandler[jobId: 44841580; id: 33; name: MEME_CHIP (SPL1_2); status: RUNNING; exit: -; error: -; workDir: /home/t/tkalman/storage2/DAPseq_test/nf_workdir3/1a/b55bc166f9fe4073ae1334b7b0aa02 started: 1779086231677; exited: -; ]
+May-18 08:57:11.677 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[jobId: 44841579; id: 34; name: MEME_CHIP (SPL1_1); status: RUNNING; exit: -; error: -; workDir: /home/t/tkalman/storage2/DAPseq_test/nf_workdir3/62/2fae75130cd1772922e82bd88b4ede started: 1779086231649; exited: -; ]
+~> TaskHandler[jobId: 44841580; id: 33; name: MEME_CHIP (SPL1_2); status: RUNNING; exit: -; error: -; workDir: /home/t/tkalman/storage2/DAPseq_test/nf_workdir3/1a/b55bc166f9fe4073ae1334b7b0aa02 started: 1779086231677; exited: -; ]
+May-18 09:02:11.685 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[jobId: 44841579; id: 34; name: MEME_CHIP (SPL1_1); status: RUNNING; exit: -; error: -; workDir: /home/t/tkalman/storage2/DAPseq_test/nf_workdir3/62/2fae75130cd1772922e82bd88b4ede started: 1779086231649; exited: -; ]
+~> TaskHandler[jobId: 44841580; id: 33; name: MEME_CHIP (SPL1_2); status: RUNNING; exit: -; error: -; workDir: /home/t/tkalman/storage2/DAPseq_test/nf_workdir3/1a/b55bc166f9fe4073ae1334b7b0aa02 started: 1779086231677; exited: -; ]
+May-18 09:05:11.725 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 44841580; id: 33; name: MEME_CHIP (SPL1_2); status: COMPLETED; exit: 0; error: -; workDir: /home/t/tkalman/storage2/DAPseq_test/nf_workdir3/1a/b55bc166f9fe4073ae1334b7b0aa02 started: 1779086231677; exited: 2026-05-18T07:05:08Z; ]
+May-18 09:05:11.728 [Task monitor] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'TaskFinalizer' minSize=10; maxSize=96; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+May-18 09:05:41.710 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 44841579; id: 34; name: MEME_CHIP (SPL1_1); status: COMPLETED; exit: 0; error: -; workDir: /home/t/tkalman/storage2/DAPseq_test/nf_workdir3/62/2fae75130cd1772922e82bd88b4ede started: 1779086231649; exited: 2026-05-18T07:05:32Z; ]
+May-18 09:05:41.721 [main] DEBUG nextflow.Session - Session await > all processes finished
+May-18 09:06:11.692 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: slurm) - terminating tasks monitor poll loop
+May-18 09:06:11.693 [main] DEBUG nextflow.Session - Session await > all barriers passed
+May-18 09:06:11.703 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'TaskFinalizer' shutdown completed (hard=false)
+May-18 09:06:11.705 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'PublishDir' shutdown completed (hard=false)
+May-18 09:06:11.716 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=2; failedCount=0; ignoredCount=0; cachedCount=32; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=7h 32m 1s; failedDuration=0ms; cachedDuration=15d 3h 58m 35s;loadCpus=0; loadMemory=0; peakRunning=2; peakCpus=16; peakMemory=256 GB; ]
+May-18 09:06:11.997 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+May-18 09:06:12.047 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'FileTransfer' shutdown completed (hard=false)
+May-18 09:06:12.048 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

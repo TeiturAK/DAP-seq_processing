@@ -1,0 +1,39 @@
+2026-05-13 11:47:16	-	ecstatic_bernard	-	f5946ab2942c5bb51e1f93e112f56682	ac2eea48-50e8-40ec-b8e6-287e6d2ec878	nextflow run main.nf -profile slurm -resume -with-report nf_report.html -with-timeline nf_timeline.html -with-trace nf_trace.txt
+2026-05-13 11:48:23	14m 49s	admiring_perlman	ERR	f5946ab2942c5bb51e1f93e112f56682	ac2eea48-50e8-40ec-b8e6-287e6d2ec878	nextflow run main.nf -profile slurm -resume -with-report nf_report.html -with-timeline nf_timeline.html -with-trace nf_trace.txt
+2026-05-13 12:04:52	-	gloomy_mcnulty	-	f5946ab2942c5bb51e1f93e112f56682	ac2eea48-50e8-40ec-b8e6-287e6d2ec878	nextflow run main.nf -profile slurm -resume -with-report nf_report.html -with-timeline nf_timeline.html -with-trace nf_trace.txt
+2026-05-13 12:59:08	-	dreamy_goldstine	-	f5946ab2942c5bb51e1f93e112f56682	ac2eea48-50e8-40ec-b8e6-287e6d2ec878	nextflow run main.nf -profile slurm -resume -with-report nf_report.html -with-timeline nf_timeline.html -with-trace nf_trace.txt
+2026-05-13 13:01:31	1h 6m 32s	tender_pauling	ERR	f5946ab2942c5bb51e1f93e112f56682	ac2eea48-50e8-40ec-b8e6-287e6d2ec878	nextflow run main.nf -profile slurm -resume -with-report nf_report.html -with-timeline nf_timeline.html -with-trace nf_trace.txt
+2026-05-13 15:49:53	33m 2s	kickass_bartik	ERR	5f06c974c267ab3440642a902967bc07	ac2eea48-50e8-40ec-b8e6-287e6d2ec878	nextflow run main.nf -profile slurm -resume -with-report nf_report.html -with-timeline nf_timeline.html -with-trace nf_trace.txt
+2026-05-13 19:27:08	7m 14s	furious_rosalind	ERR	5f06c974c267ab3440642a902967bc07	ac2eea48-50e8-40ec-b8e6-287e6d2ec878	nextflow run main.nf -profile slurm -resume
+2026-05-13 19:35:23	2h 55m 33s	wise_leavitt	ERR	5f06c974c267ab3440642a902967bc07	ac2eea48-50e8-40ec-b8e6-287e6d2ec878	nextflow run main.nf -profile slurm -resume
+2026-05-14 07:12:06	5h 53m 2s	modest_boyd	OK	5f06c974c267ab3440642a902967bc07	ac2eea48-50e8-40ec-b8e6-287e6d2ec878	nextflow run main.nf -profile slurm -resume
+2026-05-14 17:44:28	34m 2s	zen_blackwell	ERR	3aa7c5ed9f5f28e11efb7cdd2d24cd2d	ac2eea48-50e8-40ec-b8e6-287e6d2ec878	nextflow run main.nf -profile slurm -resume
+2026-05-14 19:16:17	20s	nauseous_wilson	ERR	3aa7c5ed9f5f28e11efb7cdd2d24cd2d	ac2eea48-50e8-40ec-b8e6-287e6d2ec878	nextflow run main.nf -profile slurm -resume
+2026-05-14 19:17:22	1h 48m 8s	spontaneous_gilbert	ERR	3aa7c5ed9f5f28e11efb7cdd2d24cd2d	ac2eea48-50e8-40ec-b8e6-287e6d2ec878	nextflow run main.nf -profile slurm -resume
+2026-05-14 21:06:07	4h 51m 33s	agitated_cantor	ERR	3aa7c5ed9f5f28e11efb7cdd2d24cd2d	ac2eea48-50e8-40ec-b8e6-287e6d2ec878	nextflow run main.nf -profile slurm -resume
+2026-05-15 13:24:07	-	marvelous_salas	-	769d455aa1e34290aede98f461a8cb01	ac2eea48-50e8-40ec-b8e6-287e6d2ec878	nextflow run main.nf -profile slurm -resume
+2026-05-15 13:25:03	-	berserk_hugle	-	769d455aa1e34290aede98f461a8cb01	ac2eea48-50e8-40ec-b8e6-287e6d2ec878	nextflow run main.nf -profile slurm -resume
+2026-05-15 13:26:43	24.4s	cheeky_celsius	ERR	35b679910b58d1250dc613744f2e69a5	ac2eea48-50e8-40ec-b8e6-287e6d2ec878	nextflow run main.nf -profile slurm -resume
+2026-05-15 13:27:49	22h 6m 5s	jovial_jang	ERR	35b679910b58d1250dc613744f2e69a5	ac2eea48-50e8-40ec-b8e6-287e6d2ec878	nextflow run main.nf -profile slurm -resume
+2026-05-18 06:39:28	2.3s	ecstatic_wiles	ERR	35b679910b58d1250dc613744f2e69a5	ac2eea48-50e8-40ec-b8e6-287e6d2ec878	nextflow run main.nf -profile slurm -resume
+2026-05-18 06:43:17	2s	tender_sinoussi	ERR	cff1511f756541d47394b8d309c69564	ac2eea48-50e8-40ec-b8e6-287e6d2ec878	nextflow run main.nf -profile slurm -resume
+2026-05-18 06:48:00	2.1s	gloomy_poitras	ERR	cff1511f756541d47394b8d309c69564	ac2eea48-50e8-40ec-b8e6-287e6d2ec878	nextflow run main.nf -profile slurm -resume
+2026-05-18 07:00:08	2.7s	pensive_snyder	ERR	78f6b0878749d664cc389db75dfba9dd	ac2eea48-50e8-40ec-b8e6-287e6d2ec878	nextflow run main.nf -profile slurm -resume
+2026-05-18 07:02:27	2.5s	fervent_saha	ERR	78f6b0878749d664cc389db75dfba9dd	ac2eea48-50e8-40ec-b8e6-287e6d2ec878	nextflow run main.nf -profile slurm -resume
+2026-05-18 07:21:46	-	crazy_visvesvaraya	-	94c4943f6958c2d85995b4cbdd785665	ac2eea48-50e8-40ec-b8e6-287e6d2ec878	nextflow run main.nf -profile slurm -resume
+2026-05-18 07:22:51	-	mad_crick	-	94c4943f6958c2d85995b4cbdd785665	ac2eea48-50e8-40ec-b8e6-287e6d2ec878	nextflow run main.nf -profile slurm -resume
+2026-05-18 07:24:41	18m 25s	evil_nightingale	ERR	ac8151f7bb9215df5830936b16e1d178	ac2eea48-50e8-40ec-b8e6-287e6d2ec878	nextflow run main.nf -profile slurm -resume
+2026-05-18 07:50:20	27m 32s	suspicious_avogadro	ERR	4662714d5e60fdd46c1a51e506feca2c	ac2eea48-50e8-40ec-b8e6-287e6d2ec878	nextflow run main.nf -profile slurm -resume
+2026-05-18 08:29:05	-	happy_mirzakhani	-	8267673085ccb1c573b7c4e64dbd5f00	ac2eea48-50e8-40ec-b8e6-287e6d2ec878	nextflow run main.nf -profile slurm -resume
+2026-05-18 08:32:37	-	sharp_boyd	-	e9e0b22452b130d897eafa5bfe84cf49	ac2eea48-50e8-40ec-b8e6-287e6d2ec878	nextflow run main.nf -profile slurm -resume
+2026-05-18 08:33:45	1m 1s	mad_miescher	ERR	ba6a98a57b9c7340d1b2008b79fbceca	ac2eea48-50e8-40ec-b8e6-287e6d2ec878	nextflow run main.nf -profile slurm -resume
+2026-05-18 08:36:40	29m 32s	desperate_wozniak	OK	ba6a98a57b9c7340d1b2008b79fbceca	ac2eea48-50e8-40ec-b8e6-287e6d2ec878	nextflow run main.nf -profile slurm -resume
+2026-05-18 09:33:39	2.8s	cheesy_brattain	ERR	990f5be320d1100f89e172844f6530fc	ac2eea48-50e8-40ec-b8e6-287e6d2ec878	nextflow run main.nf -profile slurm -resume
+2026-05-18 09:34:49	-	intergalactic_cray	-	990f5be320d1100f89e172844f6530fc	ac2eea48-50e8-40ec-b8e6-287e6d2ec878	nextflow run main.nf -profile slurm -resume
+2026-05-18 10:38:13	24m 32s	sick_ramanujan	OK	990f5be320d1100f89e172844f6530fc	ac2eea48-50e8-40ec-b8e6-287e6d2ec878	nextflow run main.nf -profile slurm -resume
+2026-05-18 11:42:33	31.9s	ridiculous_euler	ERR	a4bb5ba8a2e8140ef6e3278472801247	ac2eea48-50e8-40ec-b8e6-287e6d2ec878	nextflow run main.nf -profile slurm -resume
+2026-05-18 11:44:44	32.2s	big_kalman	ERR	a4bb5ba8a2e8140ef6e3278472801247	ac2eea48-50e8-40ec-b8e6-287e6d2ec878	nextflow run main.nf -profile slurm -resume
+2026-05-18 11:48:59	1m 32s	jolly_almeida	ERR	1aade300331b150ba63f6d2dc47b77ee	ac2eea48-50e8-40ec-b8e6-287e6d2ec878	nextflow run main.nf -profile slurm -resume
+2026-05-18 11:53:45	1m 2s	crazy_aryabhata	OK	a4d8f709b59def200d021a21cddcc0e1	ac2eea48-50e8-40ec-b8e6-287e6d2ec878	nextflow run main.nf -profile slurm -resume
+2026-05-19 07:38:38	-	wise_visvesvaraya	-	dd63eedb991a408f388398a51acf0dea	ac2eea48-50e8-40ec-b8e6-287e6d2ec878	nextflow run main.nf -profile slurm -resume
+2026-05-19 07:45:53	1m 1s	golden_hilbert	OK	2852ff19d1e2edd10ebc0c4eab644fea	ac2eea48-50e8-40ec-b8e6-287e6d2ec878	nextflow run main.nf -profile slurm -resume
