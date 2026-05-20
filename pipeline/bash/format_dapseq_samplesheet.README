@@ -1,0 +1,3 @@
+# Example for running:
+# find /mnt/ada/projects/aspseq/nstreet/DAP-seq_aspen_2025/ -type f -name "*_1.fq.gz" | ./format_dapseq_samplesheet.sh > samplesheet_aspen.csv
+

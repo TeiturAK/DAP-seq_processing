@@ -1,0 +1,6 @@
+sample,role,fastq_1
+A_control,input,/mnt/ada/projects/aspseq/nstreet/DAP-seq_aspen_2025/DAP-seq_aspen_2025/X204SC24093991-Z01-F002_unpacked/raw/X204SC24093991-Z01-F002_01/01.RawData/A_control/A_control_MKDL250001060-1A_22LK2KLT4_L4_1.fq.gz
+A_12_24,tf,/mnt/ada/projects/aspseq/nstreet/DAP-seq_aspen_2025/DAP-seq_aspen_2025/X204SC24093991-Z01-F002_unpacked/raw/X204SC24093991-Z01-F002_02/01.RawData/A_12_24/A_12_24_MKDL250001043-1A_22LK2KLT4_L1_1.fq.gz
+A_12_3,tf,/mnt/ada/projects/aspseq/nstreet/DAP-seq_aspen_2025/DAP-seq_aspen_2025/X204SC24093991-Z01-F002_unpacked/raw/X204SC24093991-Z01-F002_02/01.RawData/A_12_3/A_12_3_MKDL250001022-1A_22LK2KLT4_L1_1.fq.gz
+A_12_4,tf,/mnt/ada/projects/aspseq/nstreet/DAP-seq_aspen_2025/DAP-seq_aspen_2025/X204SC24093991-Z01-F002_unpacked/raw/X204SC24093991-Z01-F002_02/01.RawData/A_12_4/A_12_4_MKDL250001023-1A_22LK2KLT4_L1_1.fq.gz
+A_12_5,tf,/mnt/ada/projects/aspseq/nstreet/DAP-seq_aspen_2025/DAP-seq_aspen_2025/X204SC24093991-Z01-F002_unpacked/raw/X204SC24093991-Z01-F002_02/01.RawData/A_12_5/A_12_5_MKDL250001024-1A_22LK2KLT4_L1_1.fq.gz

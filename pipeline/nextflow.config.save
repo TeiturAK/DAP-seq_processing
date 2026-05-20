@@ -3,7 +3,7 @@ workDir = "/mnt/ada/projects/spruce/nstreet/spruce_chromatin_dynamics/DAP-seq_te
 
 params {
   // Input/output
-  input = "/mnt/picea/home/tkalman/Git/DAP-seq_processing/samplesheet_aspen_short.csv"
+  input = "$HOME/Git/DAP-seq_processing/samplesheet_aspen.csv"
   outdir      = "/mnt/ada/projects/spruce/nstreet/spruce_chromatin_dynamics/DAPseq_test/nf_out"
 
   // Role labels used in samplesheet
@@ -14,13 +14,11 @@ params {
   bowtie2_index = "/mnt/reference/Populus-tremula/v2.2/indices/bowtie2/index"
   genome_fasta  = "/mnt/reference/Populus-tremula/v2.2/fasta/Potra02_genome.fasta"
   genome_fai    = "/mnt/reference/Populus-tremula/v2.2/fasta/Potra02_genome.fasta.fai"
-  promoter_bed  = "/mnt/picea/home/tkalman/FOR-ANALYSIS-IN-ALL-PHD-PROJECTS/genomic_annotations/Ptremula_annotations/promoters_calculated_from_TSS.bedtools_slop_-l2000_-r50_-s.sorted.bed"
-  motif_db      = "/mnt/picea/home/tkalman/FOR-ANALYSIS-IN-ALL-PHD-PROJECTS/PlantTFDB/Ath_TF_binding_motifs.meme"
-
+  promoter_bed  = "$HOME/FOR-ANALYSIS-IN-ALL-PHD-PROJECTS/genomic_annotations/Ptremula_annotations/promoters_calculated_from_TSS.bedtools_slop_-l2000_-r50_-s.sorted.bed"
+  motif_db      = "$HOME//PlantTFDB/Ath_TF_binding_motifs.meme"
   // Program arguments
-  singularity_bind        = '--bind /mnt/ada:/mnt/ada --bind /mnt/picea:/mnt/picea'
   fastqc_args             = '--noextract'
-  trimmomatic_args        = '-phred33 ILLUMINACLIP:/mnt/picea/home/tkalman/Git/DAP-seq_processing/TruSeq3-PE-2.fa:2:30:10:2:TRUE SLIDINGWINDOW:5:20 MINLEN:50'
+  trimmomatic_args        = '-phred33 ILLUMINACLIP:$HOME/Git/microC_spruce-genome-project/TruSeq3-PE-2.fa:2:30:10:2:TRUE SLIDINGWINDOW:5:20 MINLEN:50'
   bowtie2_args            = '--very-sensitive --end-to-end --dovetail --minins 50 --maxins 1000'
   samtools_index_args     = ''
   samtools_filter_args    = '-h -b -f 3 -F 12 -q 20'
@@ -36,14 +34,14 @@ params {
   meme_slop_bp            = 250
 
   // Singularity images
-  fastqc_sif      = "/mnt/picea/home/tkalman/singularity/fastqc_0.11.9.sif"
-  multiqc_sif     = "/mnt/picea/home/tkalman/singularity/multiqc_1.11.sif"
-  trimmomatic_sif = "/mnt/picea/home/tkalman/singularity/trimmomatic_0.39.sif"
-  bowtie2_sif     = "/mnt/picea/home/tkalman/singularity/bowtie2_2.4.5.sif"
-  samtools_sif    = "/mnt/picea/home/tkalman/singularity/samtools_1.16.sif"
-  macs3_sif       = "/mnt/picea/home/tkalman/singularity/macs3_v3.0.0b3.sif"
-  bedtools_sif    = "/mnt/picea/home/tkalman/singularity/bedtools_2.30.0.sif"
-  meme_sif        = "/mnt/picea/home/tkalman/singularity/memesuite_5.5.2.sif"
+  fastqc_sif      = "$HOME/singularity/fastqc_0.11.9.sif"
+  multiqc_sif     = "$HOME/singularity/multiqc_1.11.sif"
+  trimmomatic_sif = "$HOME/singularity/trimmomatic_0.39.sif"
+  bowtie2_sif     = "$HOME/singularity/bowtie2_2.4.5.sif"
+  samtools_sif    = "$HOME/singularity/samtools_1.16.sif"
+  macs3_sif       = "$HOME/singularity/macs3_v3.0.0b3.sif"
+  bedtools_sif    = "$HOME/singularity/bedtools_2.30.0.sif"
+  meme_sif        = "$HOME/singularity/memesuite_5.5.2.sif"
 }
 
 singularity {
@@ -53,7 +51,7 @@ singularity {
 
 process {
   executor = 'slurm'
-  clusterOptions = '--account=u2021028 -p main --mail-user=teitur.ahlgren.kalman@umu.se --mail-type=BEGIN,END,FAIL'
+  clusterOptions = '--account=u2021028 --mail-user=teitur.ahlgren.kalman@umu.se --mail-type=BEGIN,END,FAIL'
   scratch = false
 }
 
@@ -88,14 +86,14 @@ profiles {
 
       withName: 'BOWTIE2_ALIGN_SORT' {
         cpus = 18
-        memory = '100 GB'
-        time = '1d'
+        memory = '256 GB'
+        time = '3d'
       }
 
       withName: 'SAMTOOLS_FILTER_Q20|SAMTOOLS_MARKDUP_REMOVE' {
         cpus = 18
-        memory = '100 GB'
-        time = '1d'
+        memory = '128 GB'
+        time = '2d'
       }
 
       withName: 'MACS3_CALLPEAK' {
