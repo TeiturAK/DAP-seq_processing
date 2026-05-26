@@ -133,7 +133,11 @@ make_numeric_stats <- function(stats, dataset_name) {
         get_numeric_column(stats, "macs3_peak_count"),
       
       promoter_intersect_count =
-        get_numeric_column(stats, "promoter_intersect_count")
+        get_numeric_column(stats, "promoter_intersect_count"),
+      
+      promoter_intersect_pct =
+        100 * get_numeric_column(stats, "promoter_intersect_count") /
+        get_numeric_column(stats, "macs3_peak_count")
     ) %>%
     pivot_longer(
       cols = -c(sample, dataset),
@@ -160,88 +164,6 @@ make_motif_stats <- function(stats, dataset_name) {
       values_to = "status"
     )
 }
-
-# make_metric_plot <- function(compare_table, metric_name, plot_title, ylab) {
-#   plot_table <- compare_table %>%
-#     filter(metric == metric_name) %>%
-#     filter(!is.na(value)) %>%
-#     mutate(
-#       dataset = factor(
-#         dataset,
-#         levels = c("O'Malley Arabidopsis", "Rodriguez Aspen")
-#       )
-#     )
-#   
-#   ggplot(plot_table, aes(x = dataset, y = value, fill = dataset)) +
-#     geom_boxplot(outlier.shape = NA) +
-#     geom_jitter(width = 0.15, alpha = 0.4, size = 1) +
-#     labs(
-#       title = plot_title,
-#       x = NULL,
-#       y = ylab,
-#       fill = NULL
-#     ) +
-#     theme_bw() +
-#     theme(
-#       axis.text.x = element_text(angle = 45, hjust = 1),
-#       legend.position = "none"
-#     )
-# }
-
-# make_metric_plot <- function(compare_table, metric_name, plot_title, ylab) {
-#   plot_table <- compare_table %>%
-#     filter(metric == metric_name) %>%
-#     filter(!is.na(value)) %>%
-#     mutate(
-#       dataset = factor(
-#         dataset,
-#         levels = c("O'Malley Arabidopsis", "Rodriguez Aspen")
-#       )
-#     )
-#   
-#   same_scale_plot <- ggplot(plot_table, aes(x = dataset, y = value, fill = dataset)) +
-#     geom_boxplot(outlier.shape = NA) +
-#     geom_jitter(width = 0.15, alpha = 0.4, size = 1) +
-#     labs(
-#       title = paste0(plot_title, "\nSame y-axis scale"),
-#       x = NULL,
-#       y = ylab,
-#       fill = NULL
-#     ) +
-#     theme_bw() +
-#     theme(
-#       axis.text.x = element_text(angle = 45, hjust = 1),
-#       legend.position = "none"
-#     )
-#   
-#   free_scale_plot <- ggplot(plot_table, aes(x = dataset, y = value, fill = dataset)) +
-#     geom_boxplot(outlier.shape = NA) +
-#     geom_jitter(width = 0.15, alpha = 0.4, size = 1) +
-#     facet_wrap(
-#       ~ dataset,
-#       scales = "free_y",
-#       nrow = 1
-#     ) +
-#     labs(
-#       title = paste0(plot_title, "\nSeparate y-axis scales"),
-#       x = NULL,
-#       y = ylab,
-#       fill = NULL
-#     ) +
-#     theme_bw() +
-#     theme(
-#       axis.text.x = element_blank(),
-#       axis.ticks.x = element_blank(),
-#       legend.position = "none"
-#     )
-#   
-#   plot_grid(
-#     same_scale_plot,
-#     free_scale_plot,
-#     ncol = 1,
-#     align = "v"
-#   )
-# }
 
 make_metric_plot <- function(compare_table, metric_name, plot_title, ylab) {
   plot_table <- compare_table %>%
@@ -290,13 +212,6 @@ make_metric_plot <- function(compare_table, metric_name, plot_title, ylab) {
       legend.position = "none"
     )
   
-  # plot_grid(
-  #   same_scale_plot,
-  #   free_scale_plot,
-  #   ncol = 1,
-  #   align = "v",
-  #   rel_heights = c(1.2, 1)
-  # )
   plot_grid(
     same_scale_plot,
     free_scale_plot,
@@ -431,14 +346,6 @@ pcr_duplicate_plot <- make_metric_plot(
   ylab = "PCR duplicates (%)"
 )
 
-#' FRiP percent
-frip_plot <- make_metric_plot(
-  compare_table = dataset_compare,
-  metric_name = "frip_pct",
-  plot_title = "FRiP",
-  ylab = "FRiP (%)"
-)
-
 #' MACS3 peak count
 peak_count_plot <- make_metric_plot(
   compare_table = dataset_compare,
@@ -447,12 +354,28 @@ peak_count_plot <- make_metric_plot(
   ylab = "Peak count"
 )
 
+#' FRiP percent
+frip_plot <- make_metric_plot(
+  compare_table = dataset_compare,
+  metric_name = "frip_pct",
+  plot_title = "FRiP",
+  ylab = "FRiP (%)"
+)
+
 #' Promoter intersect count
 promoter_intersect_plot <- make_metric_plot(
   compare_table = dataset_compare,
   metric_name = "promoter_intersect_count",
   plot_title = "Promoter intersect count",
   ylab = "Promoter intersect count"
+)
+
+#' Promoter peak fraction
+promoter_intersect_pct_plot <- make_metric_plot(
+  compare_table = dataset_compare,
+  metric_name = "promoter_intersect_pct",
+  plot_title = "Promoter peak fraction",
+  ylab = "Peaks intersecting promoters (%)"
 )
 
 #' MEME motif status
@@ -507,6 +430,9 @@ frip_plot
 
 #' ## Promoter intersect count
 promoter_intersect_plot
+
+#' ## Promoter peak fraction
+promoter_intersect_pct_plot
 
 #' # Motif results
 
