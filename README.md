@@ -7,6 +7,7 @@ The repository contains a general DAP-seq processing workflow that can be run in
 
 ## Repository structure
 
+```text
 DAP-seq_processing/
 ├── analysis/        # R scripts and rendered reports for downstream comparisons
 ├── config/          # Dataset-specific Nextflow configuration files
@@ -14,6 +15,8 @@ DAP-seq_processing/
 │   ├── nf/          # Main Nextflow workflow
 │   └── bash/        # Helper scripts
 └── samplesheets/    # Example/input samplesheets
+```
+
 
 ## Workflow overview
 
