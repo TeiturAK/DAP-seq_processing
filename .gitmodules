@@ -1,0 +1,3 @@
+[submodule "Trimmomatic"]
+	path = Trimmomatic
+	url = https://github.com/usadellab/Trimmomatic.git
