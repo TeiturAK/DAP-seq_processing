@@ -3,7 +3,7 @@
 Nextflow workflow for processing and analysis scripts comparing and benchmarking DAP-seq datasets aginst publically available DAP-seq 
 data.
 
-The repository contains a general DAP-seq processing workflow that can be run in either paired-end or single-end mode, together with dataset-specific configuration files and downstream R scripts for comparing sample-level statistics.
+The repository contains a general DAP-seq processing workflow that can be run in either paired-end or single-end mode, together with dataset-specific configuration files and downstream R scripts for comparing sample statistics.
 
 ## Repository structure
 
