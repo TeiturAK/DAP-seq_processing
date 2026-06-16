@@ -139,6 +139,3 @@ These scripts summarize metrics such as:
 - promoter overlaps
 - motif detection
 
-## License
-
-This repository is licensed under the GPL-3.0 license.
